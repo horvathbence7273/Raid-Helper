@@ -1,79 +1,163 @@
-html, body {
-  height: 100%;
-  margin: 0;
+html,
+body {
+    height: 100%;
+    margin: 0;
 }
 
 body {
-  position: relative;
-  min-height: 100vh;
-  background-color: #262B38;
-  color: white;
-  overflow-x: hidden;
+    padding-top: 10rem;
+    position: relative;
+    min-height: 100vh;
+    background-color: #262B38;
+    color: white;
+    overflow-x: hidden;
 }
 
 body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background-image:
-    radial-gradient(circle at 40% 30%, #8761FF33 0%, transparent 20%),
-    radial-gradient(circle at 70% 20%, #8761FF22 0%, transparent 25%),
-    radial-gradient(circle at 50% 80%, #8761FF44 0%, transparent 35%),
-    radial-gradient(circle at 80% 60%, #8761FF22 0%, transparent 50%);
-  background-repeat: no-repeat;
-  background-size: cover;
-  filter: blur(30px);
-  z-index: -1;
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+        radial-gradient(circle at 40% 30%, #8761FF33 0%, transparent 20%),
+        radial-gradient(circle at 70% 20%, #8761FF22 0%, transparent 25%),
+        radial-gradient(circle at 50% 80%, #8761FF44 0%, transparent 35%),
+        radial-gradient(circle at 80% 60%, #8761FF22 0%, transparent 50%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(30px);
+    z-index: -1;
 }
 
+/*Navbar*/
 .navbar {
-  position: fixed;
-  top: 0;
-  background-color: transparent !important;
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: fixed;
+    top: 0;
+    background-color: transparent !important;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
+
 .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='30' height='4' y='4' fill='white'/%3e%3crect width='30' height='4' y='13' fill='white'/%3e%3crect width='30' height='4' y='22' fill='white'/%3e%3c/svg%3e");
+    background-image: url("data:image/svg+xml;charset=utf8,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='30' height='4' y='4' fill='white'/%3e%3crect width='30' height='4' y='13' fill='white'/%3e%3crect width='30' height='4' y='22' fill='white'/%3e%3c/svg%3e");
     border-color: white;
 }
+
 .navbar-toggler {
-  border: 2px solid white;
+    border: 2px solid white;
 }
 
-.navbar-toggler:hover, .navbar-toggler:focus {
-  border: 2px solid white;
-  outline: none;
-}
-.navbar .nav-link, .navbar .navbar-brand {
-  color: white;
-}
-.navbar .nav-link {
-  position: relative;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  transition: background-color 0.2s ease;
+.navbar-toggler:hover,
+.navbar-toggler:focus {
+    border: 2px solid white;
+    outline: none;
 }
 
-.navbar .nav-link:hover, .navbar .nav-link:focus {
+.navbar .nav-link,
+.navbar .navbar-brand {
     color: white;
-  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.navbar .nav-link {
+    position: relative;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.05);
 }
 
 .navbar .navbar-brand:hover {
-  color: inherit;
-  text-decoration: none;
-  opacity: 1;
+    color: inherit;
+    text-decoration: none;
+    opacity: 1;
 }
+
 .dropdown-menu {
-  background-color: #262B38;
+    background-color: #262B38;
 }
+
 .dropdown-item {
-  color: white;
+    color: white;
 }
+
 .dropdown-item:hover {
     color: white;
-  background-color: #8761FF
+    background-color: #8761FF
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+}
+
+.nav-item.dropdown>.dropdown-toggle::after {
+    pointer-events: none;
+}
+.custom-dropdown .dropdown-menu {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  display: block;
+  pointer-events: none;
+  position: absolute;
+}
+
+.custom-dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/*Content*/
+.title {
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -3px;
+}
+
+.lichkingimg {
+    width: 120%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+.lichkingimg:hover {
+    transform: scale(1.05);
+}
+
+.title .raidhelper {
+    color: #8761FF;
+    text-shadow: black 2px 2px 10px;
+}
+
+.description {
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: -1px;
+}
+.custom-btn {
+  background-color: #8761FF;
+  color: white;
+  border: none;
+}
+
+.custom-btn:hover {
+  background-color: #6a4dd4;
+}
+.endgame::before{
+    content: '🎓';
+    padding-right: 10px;
+}
+.veteran::before{
+    content: '🏆';
+    padding-right: 1px;
 }
