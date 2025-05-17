@@ -2,6 +2,7 @@ html,
 body {
     height: 100%;
     margin: 0;
+    font-family: Arial, sans-serif;
 }
 
 body {
@@ -67,7 +68,8 @@ body::before {
 }
 
 .navbar .nav-link:hover,
-.navbar .nav-link:focus {
+.navbar .nav-link:focus,
+.navbar .nav-link.active {
     color: white;
     background-color: rgba(255, 255, 255, 0.05);
 }
@@ -99,21 +101,22 @@ body::before {
 .nav-item.dropdown>.dropdown-toggle::after {
     pointer-events: none;
 }
+
 .custom-dropdown .dropdown-menu {
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-10px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  display: block;
-  pointer-events: none;
-  position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    display: block;
+    pointer-events: none;
+    position: absolute;
 }
 
 .custom-dropdown:hover .dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-  pointer-events: auto;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
 }
 
 /*Content*/
@@ -129,11 +132,12 @@ body::before {
     height: auto;
     transition: transform 0.3s ease;
 }
+
 .lichkingimg:hover {
     transform: scale(1.05);
 }
 
-.title .raidhelper {
+.raidhelper {
     color: #8761FF;
     text-shadow: black 2px 2px 10px;
 }
@@ -144,20 +148,80 @@ body::before {
     line-height: 1.5;
     letter-spacing: -1px;
 }
+
 .custom-btn {
-  background-color: #8761FF;
-  color: white;
-  border: none;
+    background-color: #8761FF;
+    color: white;
+    border: none;
 }
 
 .custom-btn:hover {
-  background-color: #6a4dd4;
+    background-color: #6a4dd4;
 }
-.endgame::before{
+
+.custom-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(135, 97, 255, 0.5);
+}
+
+.endgame::before {
     content: '🎓';
     padding-right: 10px;
 }
-.veteran::before{
+
+.veteran::before {
     content: '🏆';
     padding-right: 1px;
+}
+
+.suggestionform {
+    margin-top: 6rem;
+}
+
+.suggestionform h2 {
+    font-size: 4rem;
+    font-weight: 650;
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+.suggestionform label {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    letter-spacing: -1px;
+}
+
+footer table,
+footer table tbody,
+footer table tr,
+footer table td {
+    background-color: #212529 !important;
+    color: #f8f9fa !important;
+    border-color: #6c757d !important;
+}
+.footer-section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 2;
+    letter-spacing: -1px;
+}
+footer table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+footer table td {
+  width: 25%;
+  vertical-align: top;
+}
+.footerraidhelper::before {
+    content: "";
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-image: url('/media/thelichking.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-right: 10px;
+  vertical-align: middle;
 }
