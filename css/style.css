@@ -3,6 +3,12 @@ body {
     height: 100%;
     margin: 0;
     font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-wrapper {
+    flex: 1;
 }
 
 body {
@@ -199,29 +205,39 @@ footer table td {
     color: #f8f9fa !important;
     border-color: #6c757d !important;
 }
+
 .footer-section-title {
     font-size: 2rem;
     font-weight: 700;
     line-height: 2;
     letter-spacing: -1px;
 }
+
 footer table {
-  table-layout: fixed;
-  width: 100%;
+    table-layout: fixed;
+    width: 100%;
 }
 
 footer table td {
-  width: 25%;
-  vertical-align: top;
+    width: 25%;
+    vertical-align: top;
 }
+
 .footerraidhelper::before {
     content: "";
-  display: inline-block;
-  width: 40px;
-  height: 40px;
-  background-image: url('/media/thelichking.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  margin-right: 10px;
-  vertical-align: middle;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-image: url('/media/thelichking.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.footer {
+    padding: 20px 0;
+}
+.visited:visited{
+    color: #8761FF;
 }
